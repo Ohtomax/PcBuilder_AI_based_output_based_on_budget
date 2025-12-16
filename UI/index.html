@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpecGen AI PH | PC Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Customizing the font and default background for a cleaner look */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9; /* Light, subtle background */
+        }
+        /* Defining a focus ring color for accessibility and style */
+        .focus-style:focus {
+            --tw-ring-color: #2563eb; /* Blue-600 */
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-xl p-6 md:p-10" data-aos="fade-down">
+        
+        <header class="text-center pb-8 border-b border-gray-200 mb-8">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+                <span class="text-blue-600">SpecGen</span> AI PH
+            </h1>
+            <p class="text-base text-gray-500 mt-2 max-w-2xl mx-auto">
+                Stop Guessing. Start Building. Tell us your budget, define your goal, and tune your specs with AI precision. Whether you need a workstation beast or a 4K gaming rig, get the perfect parts list in seconds.
+            </p>
+        </header>
+
+        <form class="space-y-8">
+            
+            <section class="bg-gray-50 p-6 rounded-lg shadow-inner">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">💰 PC Budget</h2>
+                <label for="budget" class="block text-sm font-medium text-gray-700 mb-2">Maximum Budget (in Philippine Peso)</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">₱</span>
+                    <input 
+                        type="number" 
+                        id="budget"
+                        class="w-full h-12 pl-8 pr-4 text-base rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition focus:outline-none focus-style" 
+                        placeholder="e.g., 50000"
+                        min="1"
+                        required
+                    >
+                </div>
+                <p class="text-xs text-gray-500 mt-1">Please enter the total amount you are willing to spend on your PC unit only.</p>
+            </section>
+            
+            <section class="bg-white p-6 rounded-lg border border-gray-200 shadow-md space-y-6">
+                <h2 class="text-xl font-semibold text-gray-800">🛠️ PC Specification & Goal</h2>
+
+                <div>
+                    <label for="goal" class="block text-sm font-medium text-gray-700 mb-2">Define Your Goal</label>
+                    <textarea 
+                        id="goal"
+                        class="w-full p-3 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition focus:outline-none focus-style resize-none" 
+                        rows="4" 
+                        placeholder="e.g., I want to play Valorant and AAA games like Cyberpunk 2077 at high settings, and do some light video editing."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <div>
+                        <label for="resolution" class="block text-sm font-medium text-gray-700 mb-2">Target Resolution</label>
+                        <select 
+                            id="resolution"
+                            class="w-full h-12 px-3 rounded-lg border-2 border-gray-300 text-base appearance-none bg-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition focus:outline-none focus-style cursor-pointer"
+                            required
+                        >
+                            <option value="" disabled selected>Select display resolution</option>
+                            <option value="1080p">1080p (Full HD)</option>
+                            <option value="1440p">1440p (QHD)</option>
+                            <option value="4k">4K (Ultra HD)</option>
+                        </select> 
+                    </div>
+
+                    <div>
+                        <label for="focus" class="block text-sm font-medium text-gray-700 mb-2">Build Focus</label>
+                        <select 
+                            id="focus"
+                            class="w-full h-12 px-3 rounded-lg border-2 border-gray-300 text-base appearance-none bg-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition focus:outline-none focus-style cursor-pointer"
+                            required
+                        >
+                            <option value="" disabled selected>Select the focus of your PC</option>
+                            <option value="CPU">CPU Bound Build (e.g., Simulation, Strategy Games)</option>
+                            <option value="Balance">Balanced Build (Recommended)</option>
+                            <option value="GPU">GPU Bound Build (e.g., Heavy AAA Gaming, 3D Rendering)</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="pt-4">
+                <button type="submit" class="w-full py-3 bg-blue-600 text-white text-lg font-bold rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out shadow-lg shadow-blue-200/50 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
+                    <span class="mr-2">🚀</span> Build My PC Now!
+                </button>
+            </div>
+
+        </form>
+        
+        <footer class="text-center mt-10 pt-6 border-t border-gray-100">
+            <p class="text-xs text-gray-400">Powered by SpecGen AI PH & Tailwind CSS. Designed with precision.</p>
+        </footer>
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+        
+        // Example for form submission (preventing default for demonstration)
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('PC Build requested! Generating your custom specifications...');
+        });
+    </script>
+</body>
+</html>
