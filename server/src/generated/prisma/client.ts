@@ -30,7 +30,7 @@ export * from "./enums.ts"
  * ```
  * const prisma = new PrismaClient()
  * // Fetch zero or more Users
- * const users = await prisma.user.findMany()
+ * const users = await prisma.users.findMany()
  * ```
  * 
  * Read more in our [docs](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client).
@@ -41,4 +41,8 @@ export { Prisma }
 
 
 
-
+/**
+ * Model users
+ * 
+ */
+export type users = Prisma.usersModel

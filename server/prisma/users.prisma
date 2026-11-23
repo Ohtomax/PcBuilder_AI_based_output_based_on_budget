@@ -8,3 +8,9 @@ model users {
     restricted      Boolean  @default(false)
     change_password Boolean  @default(false)
 }
+
+enum role {
+    USERS
+    ADMIN
+    STAFF
+}

@@ -3,13 +3,17 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "prisma": {
+    "schema": "./prisma"
+  },
   "main": "dist/src/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc && tsc-alias && node -e \"require('node:fs').cpSync('src/generated/prisma', 'dist/src/generated/prisma', { recursive: true, filter: (source) => !source.endsWith('.ts') })\"",
     "start": "node dist/src/index.js",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev"
+    "prisma:migrate": "prisma migrate dev",
+    "db:push": "prisma db push"
   },
   "dependencies": {
     "@ai-sdk/google": "^1.1.0",
