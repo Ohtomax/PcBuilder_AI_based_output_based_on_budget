@@ -15,7 +15,7 @@ import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
 globalThis['__dirname'] = path.dirname(fileURLToPath(import.meta.url))
 
-import * as runtime from "@prisma/client/runtime/library"
+import * as runtime from "@prisma/client/runtime/client"
 import * as $Enums from "./enums.ts"
 import * as $Class from "./internal/class.ts"
 import * as Prisma from "./internal/prismaNamespace.ts"
@@ -40,8 +40,5 @@ export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts exten
 export { Prisma }
 
 
-// file annotations for bundling tools to include these files
-path.join(__dirname, "query_engine-windows.dll.node")
-path.join(process.cwd(), "src/generated/prisma/query_engine-windows.dll.node")
 
 
