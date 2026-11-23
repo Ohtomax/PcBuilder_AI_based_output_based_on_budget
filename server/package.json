@@ -20,6 +20,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
+    "firebase-admin": "^14.5.1",
     "ioredis": "^5.4.2",
     "ollama-ai-provider": "^1.0.1",
     "rate-limit-redis": "^4.2.0",
@@ -34,4 +35,3 @@
     "typescript": "^5.7.2"
   }
 }
-
