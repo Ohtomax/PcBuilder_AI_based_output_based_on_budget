@@ -23,6 +23,7 @@
     "firebase-admin": "^14.5.1",
     "ioredis": "^5.4.2",
     "ollama-ai-provider": "^1.0.1",
+    "pg": "^8.23.1",
     "rate-limit-redis": "^4.2.0",
     "zod": "^3.24.1"
   },
@@ -30,6 +31,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
+    "@types/pg": "^8.23.1",
     "prisma": "^6.1.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
