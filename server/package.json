@@ -3,13 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "prisma": {
-    "schema": "./prisma"
-  },
   "main": "dist/src/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc && tsc-alias && node -e \"require('node:fs').cpSync('src/generated/prisma', 'dist/src/generated/prisma', { recursive: true, filter: (source) => !source.endsWith('.ts') })\"",
+    "build": "tsc && tsc-alias",
     "start": "node dist/src/index.js",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
@@ -18,8 +15,8 @@
   "dependencies": {
     "@ai-sdk/google": "^1.1.0",
     "@ai-sdk/openai": "^1.1.0",
-    "@prisma/adapter-pg": "^6.19.3",
-    "@prisma/client": "^6.1.0",
+    "@prisma/adapter-pg": "7.10.1",
+    "@prisma/client": "7.10.1",
     "ai": "^4.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
@@ -37,7 +34,7 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
     "@types/pg": "^8.23.1",
-    "prisma": "^6.19.3",
+    "prisma": "7.10.1",
     "tsc-alias": "^1.9.10",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"

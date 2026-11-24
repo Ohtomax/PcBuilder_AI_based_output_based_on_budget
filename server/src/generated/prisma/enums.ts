@@ -9,7 +9,25 @@
 * 🟢 You can import this file directly.
 */
 
+export const category = {
+  CPU: 'CPU',
+  GPU: 'GPU',
+  RAM: 'RAM',
+  MOTHERBOARD: 'MOTHERBOARD',
+  PSU: 'PSU',
+  STORAGE: 'STORAGE',
+  FANS: 'FANS',
+  CASE: 'CASE',
+  COOLER: 'COOLER'
+} as const
+
+export type category = (typeof category)[keyof typeof category]
 
 
-// This file is empty because there are no enums in the schema.
-export {}
+export const role = {
+  USERS: 'USERS',
+  ADMIN: 'ADMIN',
+  STAFF: 'STAFF'
+} as const
+
+export type role = (typeof role)[keyof typeof role]

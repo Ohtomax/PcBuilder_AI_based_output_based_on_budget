@@ -1,0 +1,15 @@
+model Cart {
+  id_cart   Int         @id @default(autoincrement())
+  userId    String
+  status    status_cart @default(ACTIVE)
+  createdAt DateTime    @default(now()) @db.Timestamptz(6)
+
+  cartItems CartItem[]
+}
+
+enum status_cart {
+  ACTIVE
+  INACTIVE
+  MERGED
+  CONVERTED
+}

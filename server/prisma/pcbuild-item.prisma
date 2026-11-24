@@ -1,0 +1,22 @@
+// ─────────────────────────────────────────────
+// Module 3 — PC Build Line Items
+// Each row is one component slot in a build
+// ─────────────────────────────────────────────
+
+model PcBuildItem {
+  id          Int       @id @default(autoincrement())
+  buildId     Int
+  productId   Int
+  slot        String    @db.VarChar(50)      // e.g. "CPU", "GPU", "RAM_1", "STORAGE_1"
+  quantity    Int       @default(1)
+  unitPrice   Decimal   @db.Decimal(12, 2)   // price snapshot when added to build
+  note        String?   @db.VarChar(255)     // AI reasoning for this part pick
+
+  // Relations
+  build       PcBuild   @relation(fields: [buildId], references: [id], onDelete: Cascade)
+  product     product   @relation(fields: [productId], references: [id_product])
+
+  @@unique([buildId, slot])   // one product per slot per build
+  @@index([buildId])
+  @@index([productId])
+}

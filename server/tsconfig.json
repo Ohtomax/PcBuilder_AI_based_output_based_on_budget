@@ -14,5 +14,5 @@
     "noEmitOnError": true,
     "rewriteRelativeImportExtensions": true
   },
-  "include": ["config/**/*.ts", "src/**/*.ts", "server.ts"]
+  "include": ["config/**/*.ts", "src/**/*.ts", "server.ts", "prisma.config.ts"]
 }

@@ -1,1 +1,15 @@
-            
+model CartItem {
+  id_cart_item          Int       @id @default(autoincrement())
+  cartId                Int
+  productId             Int
+  quantity              Int       @default(1)
+  addedAt               DateTime  @default(now()) @db.Timestamptz(6)
+
+  cart        Cart      @relation(fields: [cartId], references: [id_cart], onDelete: Cascade)
+  product     Product   @relation(fields: [productId], references: [id_product])
+
+  @@unique([cartId, productId])   
+  @@index([cartId])
+  @@index([productId])
+}
+

@@ -30,7 +30,7 @@ export type UsersMinAggregateOutputType = {
   email: string | null
   number: string | null
   createdAt: Date | null
-  role: string | null
+  role: $Enums.role | null
   restricted: boolean | null
   change_password: boolean | null
 }
@@ -41,7 +41,7 @@ export type UsersMaxAggregateOutputType = {
   email: string | null
   number: string | null
   createdAt: Date | null
-  role: string | null
+  role: $Enums.role | null
   restricted: boolean | null
   change_password: boolean | null
 }
@@ -171,7 +171,7 @@ export type UsersGroupByOutputType = {
   email: string
   number: string
   createdAt: Date
-  role: string
+  role: $Enums.role
   restricted: boolean
   change_password: boolean
   _count: UsersCountAggregateOutputType | null
@@ -179,7 +179,7 @@ export type UsersGroupByOutputType = {
   _max: UsersMaxAggregateOutputType | null
 }
 
-type GetUsersGroupByPayload<T extends usersGroupByArgs> = Prisma.PrismaPromise<
+export type GetUsersGroupByPayload<T extends usersGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<UsersGroupByOutputType, T['by']> &
       {
@@ -203,7 +203,7 @@ export type usersWhereInput = {
   email?: Prisma.StringFilter<"users"> | string
   number?: Prisma.StringFilter<"users"> | string
   createdAt?: Prisma.DateTimeFilter<"users"> | Date | string
-  role?: Prisma.StringFilter<"users"> | string
+  role?: Prisma.EnumroleFilter<"users"> | $Enums.role
   restricted?: Prisma.BoolFilter<"users"> | boolean
   change_password?: Prisma.BoolFilter<"users"> | boolean
 }
@@ -228,7 +228,7 @@ export type usersWhereUniqueInput = Prisma.AtLeast<{
   name?: Prisma.StringFilter<"users"> | string
   number?: Prisma.StringFilter<"users"> | string
   createdAt?: Prisma.DateTimeFilter<"users"> | Date | string
-  role?: Prisma.StringFilter<"users"> | string
+  role?: Prisma.EnumroleFilter<"users"> | $Enums.role
   restricted?: Prisma.BoolFilter<"users"> | boolean
   change_password?: Prisma.BoolFilter<"users"> | boolean
 }, "firebase_uid" | "email">
@@ -256,7 +256,7 @@ export type usersScalarWhereWithAggregatesInput = {
   email?: Prisma.StringWithAggregatesFilter<"users"> | string
   number?: Prisma.StringWithAggregatesFilter<"users"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"users"> | Date | string
-  role?: Prisma.StringWithAggregatesFilter<"users"> | string
+  role?: Prisma.EnumroleWithAggregatesFilter<"users"> | $Enums.role
   restricted?: Prisma.BoolWithAggregatesFilter<"users"> | boolean
   change_password?: Prisma.BoolWithAggregatesFilter<"users"> | boolean
 }
@@ -267,7 +267,7 @@ export type usersCreateInput = {
   email: string
   number: string
   createdAt?: Date | string
-  role?: string
+  role: $Enums.role
   restricted?: boolean
   change_password?: boolean
 }
@@ -278,7 +278,7 @@ export type usersUncheckedCreateInput = {
   email: string
   number: string
   createdAt?: Date | string
-  role?: string
+  role: $Enums.role
   restricted?: boolean
   change_password?: boolean
 }
@@ -289,7 +289,7 @@ export type usersUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  role?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumroleFieldUpdateOperationsInput | $Enums.role
   restricted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   change_password?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
@@ -300,7 +300,7 @@ export type usersUncheckedUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  role?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumroleFieldUpdateOperationsInput | $Enums.role
   restricted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   change_password?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
@@ -311,7 +311,7 @@ export type usersCreateManyInput = {
   email: string
   number: string
   createdAt?: Date | string
-  role?: string
+  role: $Enums.role
   restricted?: boolean
   change_password?: boolean
 }
@@ -322,7 +322,7 @@ export type usersUpdateManyMutationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  role?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumroleFieldUpdateOperationsInput | $Enums.role
   restricted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   change_password?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
@@ -333,7 +333,7 @@ export type usersUncheckedUpdateManyInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  role?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumroleFieldUpdateOperationsInput | $Enums.role
   restricted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   change_password?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
@@ -371,16 +371,8 @@ export type usersMinOrderByAggregateInput = {
   change_password?: Prisma.SortOrder
 }
 
-export type StringFieldUpdateOperationsInput = {
-  set?: string
-}
-
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string
-}
-
-export type BoolFieldUpdateOperationsInput = {
-  set?: boolean
+export type EnumroleFieldUpdateOperationsInput = {
+  set?: $Enums.role
 }
 
 
@@ -440,7 +432,7 @@ export type $usersPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     email: string
     number: string
     createdAt: Date
-    role: string
+    role: $Enums.role
     restricted: boolean
     change_password: boolean
   }, ExtArgs["result"]["users"]>
@@ -871,7 +863,7 @@ export interface usersFieldRefs {
   readonly email: Prisma.FieldRef<"users", 'String'>
   readonly number: Prisma.FieldRef<"users", 'String'>
   readonly createdAt: Prisma.FieldRef<"users", 'DateTime'>
-  readonly role: Prisma.FieldRef<"users", 'String'>
+  readonly role: Prisma.FieldRef<"users", 'role'>
   readonly restricted: Prisma.FieldRef<"users", 'Boolean'>
   readonly change_password: Prisma.FieldRef<"users", 'Boolean'>
 }
@@ -1050,6 +1042,11 @@ export type usersFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalA
    * Skip the first `n` users.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of users.
+   */
   distinct?: Prisma.UsersScalarFieldEnum | Prisma.UsersScalarFieldEnum[]
 }
 
