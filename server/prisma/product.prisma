@@ -1,0 +1,23 @@
+model product {
+    id_productInt    Int            @id @default(autoincrement())
+    name             String         @db.VarChar(50)
+    brand            String         @db.VarChar(50)
+    category         category
+    stocks           Int            @db.int
+    specs            Json           @default("{}")
+    price            Decimal        @db.Decimal(12, 2)
+    available        Boolean        @default(true)
+    createdAt        DateTime       @default(now()) @db.timestamp(6)
+}
+
+enum category {
+    CPU
+    GPU
+    RAM
+    MOTHERBOARD
+    PSU
+    STORAGE
+    FANS
+    CASE
+    COOLER
+}
