@@ -4,7 +4,7 @@ model users {
     email           String   @unique @db.VarChar(255)
     number          String   @db.VarChar(20)
     createdAt       DateTime @default(now()) @db.Timestamptz(6)
-    role            String   @default("USER")
+    role            role     
     restricted      Boolean  @default(false)
     change_password Boolean  @default(false)
 }
