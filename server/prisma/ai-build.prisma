@@ -1,0 +1,13 @@
+model AiBuild {
+  id_ai_build Int      @id @default(autoincrement())
+  userId      String   @db.VarChar(255)
+  name        String   @db.VarChar(100)
+  budget      Decimal  @db.Decimal(12, 2)
+  createdAt   DateTime @default(now()) @db.Timestamptz(6)
+  updatedAt   DateTime @updatedAt @db.Timestamptz(6)
+
+  user         Users         @relation(fields: [userId], references: [firebase_uid], onDelete: Restrict)
+  aiBuildItems AiBuildItem[]
+
+  @@index([userId, createdAt])
+}

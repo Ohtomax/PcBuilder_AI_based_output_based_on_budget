@@ -4,7 +4,11 @@ model Cart {
   status    status_cart @default(ACTIVE)
   createdAt DateTime    @default(now()) @db.Timestamptz(6)
 
+  user      Users      @relation(fields: [userId], references: [firebase_uid], onDelete: Restrict)
   cartItems CartItem[]
+  order     Order?
+
+  @@index([userId, status])
 }
 
 enum status_cart {

@@ -1,0 +1,16 @@
+model OrderItem {
+  id_order_item Int     @id @default(autoincrement())
+  orderId       Int
+  productId     Int
+  quantity      Int
+  productName   String  @db.VarChar(50)
+  brand         String  @db.VarChar(50)
+  specs         Json
+  unitPrice     Decimal @db.Decimal(12, 2)
+
+  order   Order   @relation(fields: [orderId], references: [id_order], onDelete: Restrict)
+  product Product @relation(fields: [productId], references: [id_product], onDelete: Restrict)
+
+  @@unique([orderId, productId])
+  @@index([productId])
+}

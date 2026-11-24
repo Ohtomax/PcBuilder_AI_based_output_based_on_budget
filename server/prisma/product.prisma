@@ -11,6 +11,8 @@ model Product {
 
 
     products     CartItem[]
+    orderItems   OrderItem[]
+    aiBuildItems AiBuildItem[]
 
 
     @@index([name, brand, category])

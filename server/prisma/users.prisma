@@ -8,6 +8,9 @@ model Users {
     restricted      Boolean   @default(false)
     change_password Boolean   @default(false)
 
+    carts    Cart[]
+    orders   Order[]
+    aiBuilds AiBuild[]
 }
 
 enum role {

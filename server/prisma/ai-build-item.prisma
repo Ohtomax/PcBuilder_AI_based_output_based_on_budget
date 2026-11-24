@@ -1,0 +1,13 @@
+model AiBuildItem {
+  id_ai_build_item Int     @id @default(autoincrement())
+  aiBuildId        Int
+  productId        Int
+  quantity         Int     @default(1)
+  estimatedPrice   Decimal @db.Decimal(12, 2)
+
+  aiBuild AiBuild @relation(fields: [aiBuildId], references: [id_ai_build], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id_product], onDelete: Restrict)
+
+  @@unique([aiBuildId, productId])
+  @@index([productId])
+}

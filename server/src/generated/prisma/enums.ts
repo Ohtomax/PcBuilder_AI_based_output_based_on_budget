@@ -9,6 +9,28 @@
 * 🟢 You can import this file directly.
 */
 
+export const status_cart = {
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE',
+  MERGED: 'MERGED',
+  CONVERTED: 'CONVERTED'
+} as const
+
+export type status_cart = (typeof status_cart)[keyof typeof status_cart]
+
+
+export const status_order = {
+  PENDING: 'PENDING',
+  CONFIRMED: 'CONFIRMED',
+  PROCESSING: 'PROCESSING',
+  SHIPPED: 'SHIPPED',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type status_order = (typeof status_order)[keyof typeof status_order]
+
+
 export const category = {
   CPU: 'CPU',
   GPU: 'GPU',

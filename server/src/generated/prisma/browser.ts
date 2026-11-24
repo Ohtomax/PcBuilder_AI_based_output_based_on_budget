@@ -18,12 +18,42 @@ export { Prisma }
 export * as $Enums from './enums.ts'
 export * from './enums.ts';
 /**
- * Model product
+ * Model AiBuildItem
  * 
  */
-export type product = Prisma.productModel
+export type AiBuildItem = Prisma.AiBuildItemModel
 /**
- * Model users
+ * Model AiBuild
  * 
  */
-export type users = Prisma.usersModel
+export type AiBuild = Prisma.AiBuildModel
+/**
+ * Model CartItem
+ * 
+ */
+export type CartItem = Prisma.CartItemModel
+/**
+ * Model Cart
+ * 
+ */
+export type Cart = Prisma.CartModel
+/**
+ * Model OrderItem
+ * 
+ */
+export type OrderItem = Prisma.OrderItemModel
+/**
+ * Model Order
+ * 
+ */
+export type Order = Prisma.OrderModel
+/**
+ * Model Product
+ * 
+ */
+export type Product = Prisma.ProductModel
+/**
+ * Model Users
+ * 
+ */
+export type Users = Prisma.UsersModel
